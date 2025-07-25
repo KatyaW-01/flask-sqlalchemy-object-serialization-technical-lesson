@@ -20,6 +20,7 @@ class AlbumSchema(Schema):
     big_hit = fields.Boolean()
     
     # compute field prior to serialization
+    #allows you to add data at serialization time without modifying your original model
     @pre_dump()
     def get_data(self, data, **kwargs):
         data.big_hit = data.num_sold > 1000000
