@@ -26,5 +26,7 @@ class DogSchema(Schema):
 # create model instance and schema instance
 
 dog = Dog(name="Snuggles", breed="Beagle", tail_wagging=True)
-print(dog)
+
 dog_schema = DogSchema()
+dog_dict = dog_schema.dump(dog)
+pprint(dog_dict)
